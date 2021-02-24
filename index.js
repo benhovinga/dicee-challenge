@@ -26,3 +26,26 @@ function replaceDiceImage(imageSelector, diceRoll) {
   document.querySelector(imageSelector).src = "images/dice" + diceRoll + ".png";
   return true;
 }
+
+/**
+ * Shows the results on the screen
+ * @param {number} player1Roll
+ * @param {number} player2Roll
+ * @returns {boolean} Success state
+ **/
+function showResults(player1Roll, player2Roll) {
+  let SELECTOR = "h1";
+
+  if (typeof player1Roll !== "number" || typeof player2Roll !== "number") {
+    return false;
+  }
+
+  if (player1Roll > player2Roll) {
+    document.querySelector(SELECTOR).innerHTML = "Player 1 wins!";
+  } else if (player1Roll < player2Roll) {
+    document.querySelector(SELECTOR).innerHTML = "Player 2 wins!";
+  } else {
+    document.querySelector(SELECTOR).innerHTML = "Draw!";
+  }
+  return true;
+}
