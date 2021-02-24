@@ -50,7 +50,15 @@ function showResults(player1Roll, player2Roll) {
   return true;
 }
 
-function main() {}
+function main() {
+  let player1Roll = rollDice();
+  let player2Roll = rollDice();
+
+  replaceDiceImage(".img1", player1Roll);
+  replaceDiceImage(".img2", player2Roll);
+
+  showResults(player1Roll, player2Roll);
+}
 
 if (sessionStorage.getItem("is_reloaded")) {
   main();
