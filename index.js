@@ -49,3 +49,10 @@ function showResults(player1Roll, player2Roll) {
   }
   return true;
 }
+
+function main() {}
+
+if (sessionStorage.getItem("is_reloaded")) {
+  main();
+}
+sessionStorage.setItem("is_reloaded", true);
